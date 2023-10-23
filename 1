@@ -1,0 +1,18 @@
+
+def swapvalues(linklist, k):
+    if k <= 0 or k >= len(linklist):
+        raise IndexError('k is out of range')
+    
+    if k == 1:
+        linklist.first.data, linklist.last.data = linklist.last.data, linklist.first.data
+    else:
+        currentfront = linklist.first
+        currentback = linklist.first
+        
+        for  in range(k - 1):
+            currentfront = currentfront.next
+        
+        for  in range(len(linklist) - k):
+            currentback = currentback.next
+        
+        currentfront.data, currentback.data = currentback.data, currentfront.data
